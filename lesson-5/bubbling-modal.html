@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            cursor: pointer;
+            transition: opacity 0.5s;
+            text-align: center;
+        }
+
+        .open-modal-btn {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="open-modal-btn">Октрыть модальное окно</button>
+
+    <div id="modal">
+        <h2>Модальное окно</h2>
+        <p>Нажмите вне окна</p>
+    </div>
+
+    <script>
+        const openModalBtn = document.querySelector('.open-modal-btn');
+        const modal = document.querySelector('#modal');
+
+        openModalBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        document.addEventListener('mousedown', (e) => {
+            if (!modal.contains(e.target) && e.target !== openModalBtn) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
