@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus</title>
+    <style>
+        .invalid {
+            border-color: red;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+
+    <form name="superForm">
+        Ваш email: <input type="email" placeholder="Введите ваш email" name="input">
+
+        <div id="error"></div>
+    </form>
+
+    <script>
+        const input = document.forms.superForm.input;
+        const error = document.getElementById('error');
+        input.onblur = function () {
+            if (!input.value.includes("@")) {
+                error.textContent = "Введите корректный email";
+                input.classList.add('invalid');
+            }
+        };
+
+        input.onfocus = function () {
+            if (this.classList.contains('invalid')) {
+                error.textContent = "";
+                this.classList.remove('invalid');
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

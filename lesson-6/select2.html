@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+
+<body>
+    <h1>Выберите страну</h1>
+    <form id="country-form">
+        <select id="country-select">
+            <option value="">Выберите страну</option>
+            <option value="ru">Россия</option>
+            <option value="ua">Украина</option>
+            <option value="by">Беларусь</option>
+            <option value="kz">Казахстан</option>
+            <option value="us">США</option>
+            <option value="de">Германия</option>
+            <option value="fr">Франция</option>
+            <option value="it">Италия</option>
+            <option value="es">Испания</option>
+            <option value="jp">Япония</option>
+            <option value="cn">Китай</option>
+            <option value="kr">Корея</option>
+            <option value="in">Индия</option>
+        </select>
+    </form>
+
+    <h2>Столица:</h2>
+    <p id="capital-info">Выберите страну, чтобу узнать столицу</p>
+
+    <script>
+        const countrySelect = document.querySelector('#country-select');
+        const capitalInfo = document.querySelector('#capital-info');
+
+        countrySelect.onchange = function () {
+            const selectedCountry = countrySelect.value;
+            let capital = '';
+
+            switch (selectedCountry) {
+                case 'ru':
+                    capital = 'Москва';
+                    break;
+                case 'ua':
+                    capital = 'Киев';
+                    break;
+                case 'by':
+                    capital = 'Минск';
+                    break;
+                case 'kz':
+                    capital = 'Алматы';
+                    break;
+                case 'us':
+                    capital = 'Вашингтон';
+                    break;
+                case 'de':
+                    capital = 'Берлин';
+                    break;
+                case 'fr':
+                    capital = 'Париж';
+                    break;
+                case 'it':
+                    capital = 'Рим';
+                    break;
+                case 'es':
+                    capital = 'Мадрид';
+                    break;
+                case 'jp':
+                    capital = 'Токио';
+                    break;
+                case 'cn':
+                    capital = 'Пекин';
+                    break;
+                case 'kr':
+                    capital = 'Сеул';
+                    break;
+                case 'in':
+                    capital = 'Дели';
+                    break;
+                default:
+                    capital = 'Выберите страну';
+                    break;
+            }
+            capitalInfo.textContent = capital;
+        }
+    </script>
+</body>
+
+</html>
