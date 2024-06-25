@@ -1,0 +1,513 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #FFFDF5;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    border: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+
+/* шапка сайта */
+.header {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.header_menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header_menu_logo {
+    width: 190px;
+    margin-top: -12px;
+}
+
+.header_menu_logo:hover {
+    stroke: #514A7E;
+    fill: #514A7E;
+}
+
+.header_menu_button {
+    border-radius: 5px;
+    background-color: #514A7E;
+    display: flex;
+    gap: 5px;
+    padding: 10px 18px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.header_menu_button:hover {
+    background-color: #4a4569;
+}
+
+.header_menu_button:active:focus {
+    background-color: #7973a0;
+}
+
+.header_menu_button_title {
+    color: white;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.header_menu_search {
+    display: flex;
+}
+
+.menu_search_input {
+    width: 355px;
+    height: 40px;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #514A7E;
+    background: #FFF;
+    color: #B9B9B9;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 24px;
+    padding-right: 10px;
+}
+
+.menu_search_btn {
+    border-radius: 0 10px 10px 0;
+    background: #514A7E;
+    display: flex;
+    width: 41px;
+    height: 40px;
+    padding: 10px 10px 10px 11px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.menu_search_btn:hover {
+    background-color: #4a4569;
+}
+
+.menu_search_btn:active {
+    background-color: #7973a0;
+}
+
+.header_menu_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 11px;
+    height: 60px;
+    width: 72px;
+    padding: 10px;
+    position: relative;
+}
+
+.header_menu_section_title {
+    color: #333232;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.header_menu_section:hover {
+    border-radius: 5px;
+    background-color: #f2f1f3;
+}
+
+.header_menu_section:hover path {
+    fill: #4a4569;
+}
+
+.header_menu_section:hover .header_menu_section_title {
+    color: #7973a0;
+}
+
+.header_menu_section:active path {
+    fill: #7973a0;
+}
+
+.header_menu_info {
+    border-radius: 15px;
+    background: #514A7E;
+    padding: 3px 6px;
+    color: #FFF;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.header_menu_login_drop {
+    position: relative;
+}
+
+.header_menu_login_drop:hover .header_menu_login {
+    visibility: visible;
+}
+
+.header_menu_login {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    background-color: #f2f1f3;
+    padding: 20px;
+    top: 75px;
+    right: 0;
+    visibility: hidden;
+    border-radius: 10px 0 10px 10px;
+}
+
+.header_menu_login_btn {
+    width: 150px;
+}
+
+/* раздел категорий */
+.section_category {
+    display: none;
+    padding-bottom: 20px;
+    opacity: 0;
+}
+
+.section_category_visible {
+    display: flex;
+    animation: fadeInFromNone 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.section_category_hidden {
+    animation: fadeOutFromBlock 0.5s ease-in-out;
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutFromBlock {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.section_category_nav {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 235px;
+}
+
+.section_category_nav_title {
+    color: #333232;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section_category_nav_title:hover {
+    color: #9458F5;
+}
+
+.section_category_zona {
+    border: 3px solid #514A7E;
+    border-radius: 15px;
+    box-sizing: border-box;
+    width: 95%;
+    height: 73vh;
+    overflow-y: scroll;
+}
+
+.section_category_zona::-webkit-scrollbar {
+    width: 10px;
+}
+
+.section_category_zona::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #7973a0;
+}
+
+.section_category_zona::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #514A7E;
+}
+
+.section_category_zona_item {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    float: left;
+    gap: 50px;
+    width: 187px;
+    height: 187px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    border-radius: 10px;
+    transition: all 1s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.section_category_zona_item:hover {
+    border-radius: 5px;
+    background-color: #f2f1f3;
+}
+
+.section_category_zona_item_img {
+    width: 64px;
+}
+
+.section_category_zona_item_name {
+    color: #333232;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.section_category_zona_footer {
+    clear: both;
+}
+
+/* фильтр по категориям */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"][id="smart"]:checked ~ .pc_book,
+input[type="radio"][id="smart"]:checked ~ .tv_audio,
+input[type="radio"][id="smart"]:checked ~ .for_gamer,
+input[type="radio"][id="smart"]:checked ~ .home_app,
+input[type="radio"][id="smart"]:checked ~ .net_eq {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+input[type="radio"][id="pc_book"]:checked ~ .smart,
+input[type="radio"][id="pc_book"]:checked ~ .tv_audio,
+input[type="radio"][id="pc_book"]:checked ~ .for_gamer,
+input[type="radio"][id="pc_book"]:checked ~ .home_app,
+input[type="radio"][id="pc_book"]:checked ~ .net_eq {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+input[type="radio"][id="tv_audio"]:checked ~ .smart,
+input[type="radio"][id="tv_audio"]:checked ~ .pc_book,
+input[type="radio"][id="tv_audio"]:checked ~ .for_gamer,
+input[type="radio"][id="tv_audio"]:checked ~ .home_app,
+input[type="radio"][id="tv_audio"]:checked ~ .net_eq {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+input[type="radio"][id="for_gamer"]:checked ~ .smart,
+input[type="radio"][id="for_gamer"]:checked ~ .pc_book,
+input[type="radio"][id="for_gamer"]:checked ~ .tv_audio,
+input[type="radio"][id="for_gamer"]:checked ~ .home_app,
+input[type="radio"][id="for_gamer"]:checked ~ .net_eq {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+input[type="radio"][id="home_app"]:checked ~ .smart,
+input[type="radio"][id="home_app"]:checked ~ .pc_book,
+input[type="radio"][id="home_app"]:checked ~ .tv_audio,
+input[type="radio"][id="home_app"]:checked ~ .for_gamer,
+input[type="radio"][id="home_app"]:checked ~ .net_eq {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+input[type="radio"][id="net_eq"]:checked ~ .smart,
+input[type="radio"][id="net_eq"]:checked ~ .pc_book,
+input[type="radio"][id="net_eq"]:checked ~ .tv_audio,
+input[type="radio"][id="net_eq"]:checked ~ .for_gamer,
+input[type="radio"][id="net_eq"]:checked ~ .home_app {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+/* новости слайдер */
+.section_news {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section_news_slider {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+    border-radius: 20px;
+}
+
+.section_news_slider_img {
+    position: relative;
+    left: 0;
+    transition: 1.2s;
+    max-height: 600px;
+    height: auto;
+    min-width: 100%;
+}
+
+.section_news_slider_img img {
+    width: 100%;
+}
+
+.section_news_dots {
+    display: flex;
+    position: absolute;
+    width: max-content;
+    margin: auto;
+    bottom: 0;
+    left: 45%;
+}
+
+.section_news_dot {
+    height: 7px;
+    width: 7px;
+    border-radius: 2vw;
+    margin: 0.4vw;
+    transition: 0.7s;
+    position: relative;
+    background-color: #514A7E;
+}
+
+.section_news_dots div:nth-child(1) {
+    scale: 1.5;
+    border: 1px solid #7973a0;
+}
+
+.section_news_slider_point {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    z-index: 1;
+    color: grey;
+    top: 45%;
+    font-size: 20px;
+}
+.point_left {
+    left: 5px;
+}
+
+.point_right {
+    right: 5px;
+}
+
+/* подвал сайта */
+.footer {
+    display: flex;
+    background-color: #514A7E;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_c {
+    color: #FBFBFB;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer_nav {
+    display: flex;
+    gap: 7px;
+}
+
+.footer_link {
+    display: flex;
+    background-color: #FFF;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    fill: #514A7E;
+}
+
+.footer_link:hover {
+    background-color: #7973a0;
+    fill: white;
+}
+
+.footer_link:active {
+    background-color: white;
+    fill: #7973a0;
+}
