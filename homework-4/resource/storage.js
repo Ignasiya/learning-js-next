@@ -1,4 +1,4 @@
-const lsScheduleKey = 'schedule ';
+const lsScheduleKey = 'schedule';
 const lsUserKey = 'user.schedule';
 
 function loadSchedule(schedules) {
